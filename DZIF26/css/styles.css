@@ -265,7 +265,6 @@ header h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: -50px; 
     z-index: 1;
 }
 
@@ -425,6 +424,33 @@ header h1 {
         margin: 25px auto; /* 移動設備上減少間距 */
         padding: 25px 20px;
     }
+
+    .section h2 {
+        font-size: 24px; /* 增加手機版標題大小 */
+    }
+
+    .section p {
+        font-size: 16px; /* 增加手機版內文大小 */
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #intro h2 {
+        font-size: 22px;
+        white-space: normal; /* 允許標題換行 */
+    }
+
+    #intro p {
+        font-size: 16px;
+        text-indent: 1em; /* 縮小縮排空間 */
+        margin-bottom: 1rem;
+    }
+
     .sidebar-menu {
         width: 250px; 
     }
