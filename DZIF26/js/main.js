@@ -1,18 +1,15 @@
-
-function openNav() { 
-    if (window.innerWidth < 768) { 
-        document.getElementById("sidebar").style.width = "250px";
-        document.querySelector(".hamburger").style.display = "none";
-    }
+function openNav() {
+    document.getElementById("sidebar").style.width = "250px";
 }
 
 function closeNav() {
-    if (window.innerWidth < 768) {
-        document.getElementById("sidebar").style.width = "0"; 
-        document.querySelector(".hamburger").style.display = "block"; 
-    }
+    document.getElementById("sidebar").style.width = "0";
 }
 
+// 確保DOM完全載入後才執行
+document.addEventListener('DOMContentLoaded', function() {
+    closeNav(); // 確保初始狀態是關閉的
+});
 
 function scrollToContent() {
     const mainContent = document.getElementById('main-content');
