@@ -420,37 +420,37 @@ header h1 {
         display: block;
     }
     .section {
-        width: 95%;
-        margin: 25px auto; /* 移動設備上減少間距 */
-        padding: 25px 20px;
+        width: 100%; /* 改為全寬 */
+        margin: 15px 0; /* 改為上下間距 */
+        padding: 20px 15px; /* 減少內邊距 */
+        background: none; /* 移除背景 */
+        box-shadow: none; /* 移除陰影 */
+        border: none; /* 移除邊框 */
+        border-radius: 0; /* 移除圓角 */
     }
 
     .section h2 {
-        font-size: 24px; /* 增加手機版標題大小 */
+        font-size: 28px; /* 增加標題大小 */
+        margin-bottom: 25px;
+        text-align: center;
     }
 
     .section p {
-        font-size: 16px; /* 增加手機版內文大小 */
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .container {
-        width: 95%;
-        padding: 10px;
-    }
-
-    #intro h2 {
-        font-size: 22px;
-        white-space: normal; /* 允許標題換行 */
+        font-size: 18px; /* 增加段落文字大小 */
+        line-height: 1.8;
+        padding: 0 10px; /* 左右加點間距 */
     }
 
     #intro p {
-        font-size: 16px;
-        text-indent: 1em; /* 縮小縮排空間 */
-        margin-bottom: 1rem;
+        font-size: 18px;
+        text-indent: 1em;
+        padding: 0 15px;
     }
 
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
     .sidebar-menu {
         width: 250px; 
     }
