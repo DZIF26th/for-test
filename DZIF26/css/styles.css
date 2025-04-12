@@ -417,7 +417,7 @@ header h1 {
 .scroll-down {
     z-index: 2;
     position: absolute;
-    bottom: 20px;
+    bottom: 5%;  /* 改為更底部的位置 */
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -500,6 +500,7 @@ header h1 {
         flex-direction: column;
         justify-content: center;
         position: relative;
+        padding-bottom: 120px;  /* 增加底部padding確保有足夠空間 */
     }
 
     .content-box::before {
@@ -514,6 +515,11 @@ header h1 {
 
     .image-box {
         display: none; 
+    }
+
+    .scroll-down {
+        bottom: 10%;  /* 手機版稍微往上一點 */
+        font-size: 28px;  /* 手機版圖示放大一點 */
     }
 }
 
