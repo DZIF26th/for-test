@@ -484,46 +484,86 @@ hr{
 .event-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
+    gap: 3rem;
+    padding: 1rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden; /* 防止水平溢出 */
 }
 
+/* 活動區塊的響應式設計 */
 .event-block {
     display: flex;
     margin: 2rem 0;
-    padding: 1rem;
-    gap: 2rem;
+    padding: 2rem;
+    gap: 3rem;
+    border-radius: 12px;
+    max-width: 100%; /* 確保不超過父容器 */
 }
 
 .event-text {
     flex: 1;
 }
 
+.event-text h2 {
+    font-size: 2.2rem;  /* 增加標題大小 */
+    margin-bottom: 1.5rem;
+}
+
+.event-text p {
+    font-size: 1.2rem;  /* 增加文字大小 */
+    line-height: 1.6;
+}
+
 .event-image {
-    flex: 1;
+    flex: 1.2;  /* 讓圖片區域稍微大一點 */
 }
 
 .event-image img {
     width: 100%;
-    height: auto;
+    height: 450px;  /* 設定固定高度 */
     object-fit: cover;
+    border-radius: 12px;
 }
 
 /* 手機版的響應式設計 */
 @media screen and (max-width: 768px) {
+    .container {
+        padding: 0.5rem;  /* 減少容器的左右間距 */
+    }
+
+    .event-container {
+        padding: 0.5rem;
+        width: 100%;
+    }
+
     .event-block {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
+        margin: 1rem 0;   /* 減少區塊間的間距 */
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .event-text h2 {
+        font-size: 1.8rem;  /* 手機版標題大小 */
+    }
+
+    .event-text p {
+        font-size: 1.1rem;  /* 手機版文字大小 */
     }
 
     .event-image {
-        width: 100%;
+        width: 100%; /* 改為100%而不是100vw */
+        margin-left: 0; /* 移除負邊距 */
+        margin-right: 0;
     }
 
     .event-image img {
         width: 100%;
-        max-height: 300px;
-        object-fit: cover;
+        height: 300px;  /* 手機版圖片高度 */
+        border-radius: 0;  /* 移除圖片圓角 */
     }
 }
 
