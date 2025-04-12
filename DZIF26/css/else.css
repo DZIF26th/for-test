@@ -104,6 +104,8 @@
     color: var(--text-lighter);
     font-size: 2rem;
     width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .semester-container {
@@ -163,6 +165,7 @@
 @media screen and (max-width: 768px) {
     .semester-container {
         flex-direction: column;
+        padding-top: 1rem;
     }
 
     .table-wrapper {
@@ -180,6 +183,11 @@
 
     .semester-table td:last-child {
         width: 75%;
+    }
+
+    .schedule-title {
+        margin-top: 4rem;  /* 增加手機版上方間距 */
+        padding-top: 1rem;
     }
 }
 
@@ -478,6 +486,45 @@ hr{
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
+}
+
+.event-block {
+    display: flex;
+    margin: 2rem 0;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.event-text {
+    flex: 1;
+}
+
+.event-image {
+    flex: 1;
+}
+
+.event-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 手機版的響應式設計 */
+@media screen and (max-width: 768px) {
+    .event-block {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .event-image {
+        width: 100%;
+    }
+
+    .event-image img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+    }
 }
 
 .event-block {
