@@ -13,8 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function scrollToContent() {
     const mainContent = document.getElementById('main-content');
+    const offset = -30; // 可以調整這個值來微調最終停止的位置
+    const targetPosition = mainContent.offsetTop - offset;
+    
     window.scrollTo({
-        top: mainContent.offsetTop,
+        top: targetPosition,
         behavior: 'smooth'
     });
 }
