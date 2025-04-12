@@ -217,6 +217,21 @@ header h1 {
     transition: 0.4s;
 }
 
+/* Add these new styles after the existing .hamburger styles */
+.hamburger.active .hamburger-line:first-child {
+    transform: rotate(45deg) translate(7px, 7px);
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:last-child {
+    transform: rotate(-45deg) translate(7px, -7px);
+    opacity: 0;
+}
+
 .sidebar-menu {
     position: fixed; 
     top: 0;
@@ -228,6 +243,18 @@ header h1 {
     overflow-y: auto; 
     transition: width 0.5s; 
     padding-top: 60px; 
+}
+
+/* Update the sidebar-menu styles to include active state */
+.sidebar-menu.active {
+    width: 250px;
+}
+
+/* Hide hamburger when sidebar is open */
+.sidebar-menu.active + .hamburger {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
 .sidebar-menu a {
@@ -258,7 +285,7 @@ header h1 {
 .content-box {
     position: relative;
     padding: 40px 20px 100px; 
-    min-height: 100vh;
+    min-height: 90vh;
     background: url('../images/pc_1.png') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
@@ -461,15 +488,28 @@ header h1 {
 
     .content-box {
         padding: 20px 20px 80px;
+        margin-top: env(safe-area-inset-top, 20px); /* 為瀏覽器 UI 保留空間 */
         margin-bottom: -30px;
         background: url('../images/pc_1.png') no-repeat center center;
         background-size: cover; 
-        background-attachment: fixed;
-        min-height: 100vh; 
+        background-attachment: scroll; /* 改為 scroll 以優化手機效能 */
+        min-height: calc(100vh - env(safe-area-inset-top, 20px)); /* 減去頂部保留空間 */
+        height: calc(100vh - env(safe-area-inset-top, 20px)); /* 固定高度 */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
     }
 
     .content-box::before {
-        background: rgba(0, 0, 0, 0.7); 
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
     }
 
     .image-box {
@@ -543,7 +583,7 @@ header h1 {
 }
 @media screen and (max-width: 480px) {
     #intro h2 {
-        font-size: clamp(1rem, 3.5vw, 1.5rem);
+        font-size: clamp(1.5rem, 4.5vw, 2rem);  /* 增加手機版字體大小 */
         margin-bottom: 1.5rem;
     }
 }
