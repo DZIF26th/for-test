@@ -106,3 +106,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.querySelector('.hamburger').addEventListener('click', function() {
+    const sidebar = document.querySelector('.sidebar-menu');
+    const hamburger = this;
+    
+    sidebar.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+    const sidebar = document.querySelector('.sidebar-menu');
+    const hamburger = document.querySelector('.hamburger');
+    
+    sidebar.classList.remove('active');
+    hamburger.classList.remove('active');
+});
