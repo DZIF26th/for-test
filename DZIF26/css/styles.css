@@ -521,6 +521,11 @@ header h1 {
         bottom: 10%;  /* 手機版稍微往上一點 */
         font-size: 28px;  /* 手機版圖示放大一點 */
     }
+
+    #intro h2 {
+        margin-top: 2.5rem;  /* 增加上方间距 */
+        padding-top: 1rem;   /* 添加内边距 */
+    }
 }
 
 @media screen and (min-width: 768px) {
